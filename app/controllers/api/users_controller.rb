@@ -1,5 +1,4 @@
 class Api::UsersController < ApplicationController
-  before_action :find_user, only: [:destroy, :update]
 
   def show
     user = User.find(params[:id])
@@ -13,7 +12,7 @@ class Api::UsersController < ApplicationController
 
   def create
     user = User.create(user_params)
-    if @user.save
+    if user.save
       render json: {status: 'Success', message: 'User created', data: user}, status: :ok
     else
       render json: {status: 'ERROR', message: 'User not created', data: user.errors}, status: :unprocessable_entity
@@ -23,22 +22,19 @@ class Api::UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     @user.update(user_params)
+    @user.save
     render json: {status: 'Updated', message: 'user successfully updated'}, status: :ok
   end
 
   def destroy
+    user = User.find(params[:id])
     user.destroy
-    byebug
     render json: {status: 'Deleted', message: 'user successfully deleted'}, status: :ok
   end
 
   private
 
   def user_params
-    params.require(:password, :email)
-  end
-
-  def find_user
-    user = User.find(params[:data][:id])
+    params.require(:password, :email).permit(:id)
   end
 end
