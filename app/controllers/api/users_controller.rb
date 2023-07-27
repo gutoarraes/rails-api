@@ -10,7 +10,7 @@ class Api::UsersController < ApplicationController
     render json: {status: 'Success', message: 'All users', data: users}, status: :ok
   end
 
-  def create
+  def create # ok
     user = User.create(user_params)
     if user.save
       render json: {status: 'success', message: 'User created', data: user}, status: :ok
