@@ -23,7 +23,7 @@ test:
 
 production:
   <<: *default
-  url: <%= ENV["DATABASE_URL"]%>
+  url: <%= ENV["DATABASE_URL"] %>
   database: novo_production
   username: novo
   password: <%= ENV["NOVO_DATABASE_PASSWORD"] %>
