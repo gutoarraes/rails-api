@@ -49,3 +49,5 @@ group :development do
   gem 'faker'
 end
 
+
+gem "dockerfile-rails", ">= 1.5", :group => :development
