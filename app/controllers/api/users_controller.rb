@@ -1,4 +1,5 @@
 class Api::UsersController < ApplicationController
+  before_action :auth
 
   def show # ok
     user = User.find(params[:id])
@@ -38,13 +39,10 @@ class Api::UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:password, :email)
+    params.require(:user).permit(:password, :email, :api_key)
   end
 
-  # user.attributes{email:, password:}
-  # def email
-  #   params.require(:email)
-  # end
-  #
-
+  def auth
+    params[:api_key] == Rails.application.credentials.api_key
+  end
 end
