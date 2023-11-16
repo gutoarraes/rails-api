@@ -6,6 +6,11 @@ This is an API that validates users so they are able to login to a front end in 
 
 ## Getting started
 
+Required: 
+* Ruby "3.2.1"
+* Ruby on Rails "7.0.6"
+* Postgresql "1.1"
+
 To get the repository locally, execute the following command in the terminal.
 ```
 git clone https://github.com/gutoarraes/rails-api
@@ -16,11 +21,7 @@ gem install
 ```
 Start the API server by running `rails s`
 
-# test
-
-On a web tool for API building such as [postman](https://www.postman.com/) you can test that the server is running correctly by creating an instance of a user in the rails console, and issuing the following `GET` request:
-
-*
+Debug with adding `byebug` in a particular part of the code as a break point to be displayed in the terminal
 
 ### Greatest challenge
 
@@ -37,3 +38,4 @@ This gave me the opportunity to manage `rails` versions, configuraing environmen
 ### Acknowledgements
 
 Huge shoutout to my friend [Franco Moraes](https://github.com/francomoraes) who gave me the idea and the opportunity to start this project and piggyback off of his React [application](https://github.com/francomoraes/portfolio-games).
+https://img.shields.io/badge/ruby_on_rails-red
