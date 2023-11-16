@@ -38,5 +38,5 @@ This gave me the opportunity to manage `rails` versions, configuraing environmen
 ### Acknowledgements
 
 Huge shoutout to my friend [Franco Moraes](https://github.com/francomoraes) who gave me the idea and the opportunity to start this project and piggyback off of his React [application](https://github.com/francomoraes/portfolio-games).
-!(https://img.shields.io/badge/ruby_on_rails-red)
+![ruby-on-rails-badge](https://img.shields.io/badge/ruby_on_rails-red)
 
